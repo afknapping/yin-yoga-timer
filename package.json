@@ -1,0 +1,17 @@
+{
+  "name": "yin-yoga-timer",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node_modules/curly-weasel-moo/scripts/start",
+    "deploy": "node_modules/curly-weasel-moo/scripts/deploy",
+    "init": "node_modules/curly-weasel-moo/scripts/init"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "curly-weasel-moo": "^0.11.3"
+  }
+}
