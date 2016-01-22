@@ -1,0 +1,50 @@
+extends ./_layouts-includes/_layout.jade
+
+block content
+
+  .viewport
+    .section.poses
+      h1
+        | Poses
+      .poses
+        .minus
+          .button
+            | -
+        .count
+          | 23
+        .plus
+          .button
+            | +
+    .section.slack
+      h1
+        | Slack
+      .poses
+        .minus
+          .button
+            | -
+        .count
+          | 5
+        .plus
+          .button
+            | +
+
+    .section.time
+      h1
+        | Time
+      .poses
+        .minus
+          .button
+            | -
+        .count
+          | 30
+        .plus
+          .button
+            | +
+
+    .section.start
+      .start-button
+        | Start
+
+
+  //- holds inline ui-lang and jquery
+  include ./_layouts-includes/_interaction.jade
