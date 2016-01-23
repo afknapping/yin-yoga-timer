@@ -62,6 +62,20 @@ h1 {
   font-size: 1em;
 }
 
+
+// refactoring notes
+// counter?
+// .integer.spinner
+// integer.display max three digits
+// row of gapless elements
+// .ui.row
+// .context.touch, .context.point
+// .context.dark, context.light
+
+// attached.left, attached.right: no margins
+// starts.attached.group: rounded corners left
+// ends.attached.group: rounded corners right
+
 .minus,
 .plus,
 .count {
@@ -85,16 +99,15 @@ h1 {
   font-weight: 200;
 }
 
-.minus {
+
+.attached.left {
   border-top-left-radius:  0.1em;
   border-bottom-left-radius:  0.1em;
-
 }
-.plus {
+.attached.right {
   border-top-right-radius:  0.1em;
   border-bottom-right-radius:  0.1em;
 }
-
 
 
 
