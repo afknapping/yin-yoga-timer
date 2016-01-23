@@ -9,7 +9,7 @@ block content
     button.button.test(onclick="alert('yo');" style="touch-action: none;")
       | resp
 
-  .viewport.context.touch
+  .view.context.touch
     .section.poses
       h1
         | Poses
@@ -25,34 +25,36 @@ block content
     .section.slack
       h1
         | Slack
-      .poses
-        .minus.integer.spinner.starts.attached.group
-          .button
-            | -
-        .count
-          | 5
-        .plus.integer.spinner.ends.attached.group
-          .button
-            | +
+      .ui.row
+        .poses
+          .minus.integer.spinner.starts.attached.group
+            .button
+              | -
+          .count
+            | 5
+          .plus.integer.spinner.ends.attached.group
+            .button
+              | +
 
     .section.time
       h1
         | Time
-      .poses
-        .minus.integer.spinner.starts.attached.group
-          .button
-            | -
-        .count
-          | 30
-        .plus.integer.spinner.ends.attached.group
-          .button
-            | +
+      .ui.row
+        .poses
+          .minus.integer.spinner.starts.attached.group
+            .button
+              | -
+          .count
+            | 30
+          .plus.integer.spinner.ends.attached.group
+            .button
+              | +
 
     .section.start
       .start.button.full-width
         | Start
 
-  .viewport.settings-etc.context.touch
+  .view.settings-etc.context.touch
     button.button(onClick="location.reload(true)")
       | Reload
 
