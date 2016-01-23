@@ -11,7 +11,7 @@ block content
   .bottom-nav.button.settings-trigger(style="touch-action: none;")
       | =
 
-  .view
+  .view.timer-settings
     .section.poses
       h1
         | Poses
@@ -53,13 +53,17 @@ block content
               | +
 
     .section.start
-      .start.button.full-width
+      .start.button.full-width#start(style="touch-action: none;")
         | Start
 
   .view.settings-etc
     button.button(onClick="location.reload(true)")
       | Reload
 
+  .view.timer
+    | timer view
+    .button.stop(style="touch-action: none;")
+      | stop
 
 
   //- holds inline ui-lang and jquery
