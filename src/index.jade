@@ -2,14 +2,14 @@ extends ./_layouts-includes/_layout.jade
 
 block content
 
+  .app-top-bar
+    button.button.settings-trigger(style="touch-action: none;")
+      | menu
+    |  yin yoga timer 
+    button.button.test(onclick="alert('yo');" style="touch-action: none;")
+      | resp
 
   .viewport.context.touch
-    .app-top-bar
-      | yin yoga timer 
-      button.button.test(onclick="alert('yo');" style="touch-action: none;")
-        | response test
-
-
     .section.poses
       h1
         | Poses
