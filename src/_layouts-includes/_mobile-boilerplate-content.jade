@@ -1,0 +1,38 @@
+<div class="example-content">
+<p><button onClick="location.reload(true)">Reload</button></p>
+<p>Cupcake ipsum dolor. Sit amet I love bonbon* bear claw tootsie roll jelly.* I love chocolate ice cream* chupa chups I love. Gummi bears I love wafer marzipan jujubes sweet tootsie roll bear claw. Dessert gingerbread dragée sweet roll liquorice fruitcake marzipan donut. I love I love sugar plum marshmallow jujubes. Cotton candy jujubes oat cake chocolate cake chocolate cake marshmallow bear claw chocolate cake. Jelly cupcake gingerbread I love cupcake sesame snaps apple pie oat cake.</p>
+</div>
+
+<style type="text/css">
+.example-content {
+
+}
+</style>
+
+
+<!-- Add your site or application content here -->
+
+<script src="js/vendor/jquery-2.1.3.min.js"></script>
+<script src="js/helper.js"></script>
+<script src="js/main.js"></script>
+
+<script type="text/javascript">
+// tell user about updates. via https://gregsramblings.com/2012/05/28/html5-application-cache-how-to/
+if (window.applicationCache) {
+applicationCache.addEventListener('updateready', function() {
+if (confirm('An update is available. Reload now?')) {
+window.location.reload();
+}
+});
+}
+</script>
+
+<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+<script>
+(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+e.src='//www.google-analytics.com/analytics.js';
+r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+ga('create','UA-XXXXX-X');ga('send','pageview');
+</script>

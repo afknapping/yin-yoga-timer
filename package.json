@@ -12,6 +12,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "curly-weasel-moo": "^0.11.3"
+    "curly-weasel-moo": "^0.11.3",
+    "mobile-boilerplate-timetable-3": "git+https://github.com/filtercake/mobile-boilerplate-timetable-3.git#gh-pages"
   }
 }
