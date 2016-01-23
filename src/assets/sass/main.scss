@@ -53,7 +53,7 @@ body {
 .viewport {
   width: 100vw;
   height: 100vh;
-  border: 1px dashed $black;
+  // border: 1px dashed $black;
   background-color: $silver;
   // font-size: 4rem;
   overflow: hidden;
@@ -64,7 +64,7 @@ body {
   padding: 2.3em 0 0 0;
   width: 100vw;
   height: 100vh;
-  border: 1px dashed $black;
+  // border: 1px dashed $black;
   background-color: $silver;
   padding: 2.3em 0 0 0;
   // font-size: 4rem;
@@ -131,6 +131,8 @@ h1 {
   // font-size: 1em;
   text-align: center;
   line-height: 1.6;
+  // http://css3gen.com/box-shadow/
+  box-shadow: 1px 1px 0px 0px rgba(50, 50, 50, 0.50);
 }
 
 .start {
@@ -186,12 +188,32 @@ h1 {
   left: 100vw;
   top: 0;
   padding: 3em 1em;
+  // http://css3gen.com/box-shadow/
+  box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.66);
 }
 
 .settings-etc.visible {
-  left: 0em;
+  left: 10vw;
+  width: 90vw;
+
 }
 
 .ui.row * {
   max-height: 3em;
+}
+
+$bottom-nav-radius: 18vw;
+.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background-color: $yellow;
+  opacity: 0.6;
+  z-index: 30;
+  width: $bottom-nav-radius;
+  height: $bottom-nav-radius;
+  line-height: $bottom-nav-radius * 1.3;
+  border-top-left-radius:  $bottom-nav-radius;
+  text-align: right;
+  padding-right: 1.3em;
 }

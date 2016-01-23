@@ -3,13 +3,15 @@ extends ./_layouts-includes/_layout.jade
 block content
 
   .app-top-bar
-    button.button.settings-trigger(style="touch-action: none;")
-      | menu
     |  yin yoga timer 
-    button.button.test(onclick="alert('yo');" style="touch-action: none;")
-      | resp
+    //- button.button.test(onclick="alert('yo');" style="touch-action: none;")
+    //-   | resp
 
-  .view.context.touch
+  
+  .bottom-nav.button.settings-trigger(style="touch-action: none;")
+      | =
+
+  .view
     .section.poses
       h1
         | Poses
@@ -54,7 +56,7 @@ block content
       .start.button.full-width
         | Start
 
-  .view.settings-etc.context.touch
+  .view.settings-etc
     button.button(onClick="location.reload(true)")
       | Reload
 
