@@ -5,6 +5,10 @@ head
   //- semantic UI
   script(src="/assets/vendor/semantic.js")
 
+  //- hammerjs for instant touch events
+  script(src="/assets/bucket/hammer-time.js")
+
+
   //- MAIN.CSS
   link(rel="stylesheet" type="text/css" href="assets/css/main.css")
 
@@ -12,8 +16,18 @@ head
   //- try to use a mobile boilerplate versio which just has the exends header and the block as change?
 
   <!-- full screen modes via http://www.html5rocks.com/en/mobile/fullscreen/#toc-launch -->
+
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
+
+
+  //- zoom and snappier clicks
+  //- [Adactio: Journal—Delay](https://adactio.com/journal/10019)
+  //- [mobile - What's the point of 'meta viewport user-scalable=no' in the Google Maps API - Stack Overflow](http://stackoverflow.com/questions/6397748/whats-the-point-of-meta-viewport-user-scalable-no-in-the-google-maps-api)
+
+  //- yes, bad. is WIP
+  //- meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
+  meta(name="viewport" content="user-scalable=no")
 
 
   //- ui-lang.com
