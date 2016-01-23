@@ -186,6 +186,7 @@ h1 {
 .settings-etc {
   position: absolute;
   left: 100vw;
+  width: 98.5vw;
   top: 0;
   padding: 3em 1em;
   // http://css3gen.com/box-shadow/
@@ -193,8 +194,7 @@ h1 {
 }
 
 .settings-etc.visible {
-  left: 10vw;
-  width: 90vw;
+  transform: translateX(-98.5vw);
 
 }
 
