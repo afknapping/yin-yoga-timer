@@ -67,14 +67,60 @@ h1 {
 // counter?
 // .integer.spinner
 // integer.display max three digits
+
 // row of gapless elements
 // .ui.row
+
 // .context.touch, .context.point
 // .context.dark, context.light
 
+// VISUAL MIXINS
+
+/* rounded corners */
+@mixin rounded-corners-left {
+  border-top-left-radius:  0.1em;
+  border-bottom-left-radius:  0.1em;
+}
+@mixin rounded-corners-right {
+  border-top-right-radius:  0.1em;
+  border-bottom-right-radius:  0.1em;
+}
+// TODO: add top and bottom
+
+
+
+// UI-SEMANTIC CLASSES
+
+.starts.attached.group {
+  @include rounded-corners-left;
+}
+.ends.attached.group {
+  @include rounded-corners-right;
+}
+
 // attached.left, attached.right: no margins
-// starts.attached.group: rounded corners left
-// ends.attached.group: rounded corners right
+
+
+
+
+
+.button {
+  font-weight: 900;
+  font-size: 1em;
+  text-align: center;
+  line-height: 1.6;
+}
+
+.start {
+  margin-top: 1em;
+  // width: 100%;
+  background-color: $aqua;
+  color: white;
+
+  line-height: 1.62;
+  font-size: 1.62em;
+  padding: 0;
+}
 
 .minus,
 .plus,
@@ -100,34 +146,12 @@ h1 {
 }
 
 
-.attached.left {
-  border-top-left-radius:  0.1em;
-  border-bottom-left-radius:  0.1em;
-}
-.attached.right {
-  border-top-right-radius:  0.1em;
-  border-bottom-right-radius:  0.1em;
-}
-
-
-
 .poses {
 
 }
 .slack {
 }
 
-.start {
-  margin-top: 1em;
-  // width: 100%;
-  background-color: $aqua;
-  color: white;
-  font-weight: 900;
-
-
-  font-size: 10rem;
-  line-height: 0.75;
-  text-align: center;
-  height: 1rem;
-
+.settings-etc {
+  padding-top: 2em;
 }

@@ -2,29 +2,29 @@ extends ./_layouts-includes/_layout.jade
 
 block content
 
-  .viewport
+  .viewport.context.touch
     .section.poses
       h1
         | Poses
-      .poses
-        .minus.integer.spinner.attached.left
+      .ui.row
+        .minus.integer.spinner.starts.attached.group
           .button
             | -
         .count
           | 23
-        .plus.integer.spinner.attached.right
+        .plus.integer.spinner.ends.attached.group
           .button
             | +
     .section.slack
       h1
         | Slack
       .poses
-        .minus.integer.spinner.attached.left
+        .minus.integer.spinner.starts.attached.group
           .button
             | -
         .count
           | 5
-        .plus.integer.spinner.attached.right
+        .plus.integer.spinner.ends.attached.group
           .button
             | +
 
@@ -32,18 +32,23 @@ block content
       h1
         | Time
       .poses
-        .minus.integer.spinner.attached.left
+        .minus.integer.spinner.starts.attached.group
           .button
             | -
         .count
           | 30
-        .plus.integer.spinner.attached.right
+        .plus.integer.spinner.ends.attached.group
           .button
             | +
 
     .section.start
-      .start-button
+      .start.button.full-width
         | Start
+
+  .viewport.settings-etc.context.touch
+    button.button(onClick="location.reload(true)")
+      | Reload
+
 
 
   //- holds inline ui-lang and jquery

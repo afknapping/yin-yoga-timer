@@ -2,6 +2,14 @@ script
   //- controlling event bubbling
   | $('.a-front-container-or-element').click(function(event){ event.stopPropagation(); });
 
+
+  |  // tell user about updates. via https://gregsramblings.com/2012/05/28/html5-application-cache-how-to/
+  | if (window.applicationCache) {
+  | applicationCache.addEventListener('updateready', function() {
+  | if (confirm('An update is available. Reload now?')) {
+  | window.location.reload(); } });}
+
+
 //- uilang.com
 //- add, remove, toggle
 //- ".class", "#id", "target"
