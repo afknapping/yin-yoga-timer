@@ -1,5 +1,7 @@
 // main.scss
 
+#__bs_notify__ { top:94% !important; right: 10px !important; border-radius: 15px !important; height:60px !important; font-size: 12px !important;}
+
 @import "_meyer-reset.scss";
 
 
@@ -39,7 +41,18 @@ $iconpath: "/assets/vendor";
 // for debugging
 // * {margin: 0 !important; padding: 0 !important; }
 
-html {padding: 0; overflow: hidden;}
+html {
+  font-size: 26px;
+  padding: 0;
+  overflow: hidden;
+}
+
+// missing reset ??
+input, textarea, keygen, select, button {
+  font-size: 1rem;
+}
+
+
 body {
   padding: 0;
   color: $black;
@@ -49,22 +62,26 @@ body {
 
 }
 
-
+//  shows border around an object
+// @include debug;
+// @include debug($teal);
+@mixin debug($color: $yellow) {
+box-shadow: inset 0px 0px 2px 2px $color;
+}
 .viewport {
+  // @include debug;
   width: 100vw;
   height: 100vh;
-  // border: 1px dashed $black;
   background-color: $silver;
-  // font-size: 4rem;
   overflow: hidden;
   position: relative;
 }
 
 .view {
+  // @include debug($teal);
   padding: 2.3em 0 0 0;
   width: 100vw;
   height: 100vh;
-  // border: 1px dashed $black;
   background-color: $silver;
   padding: 2.3em 0 0 0;
   // font-size: 4rem;
@@ -77,6 +94,7 @@ body {
 .section {
   padding: 0em 0.3em 1em 0.3em;
   margin: 0;
+  // @include debug($black);
 }
 
 h1 {
@@ -135,27 +153,19 @@ h1 {
   box-shadow: 1px 1px 0px 0px rgba(50, 50, 50, 0.50);
 }
 
-.start.button {
-  background-color: $aqua;
-  color: white;
-  line-height: 1.62;
-  // font-size: 1.62em;
-  padding: 0;
-  position: absolute;
-  bottom: 4em;
-  width: 100%;
-  height: 3em;
-
-}
 
 .minus,
 .plus,
 .count {
   display: inline-block;
-  // font-size: 10rem;
-  line-height: 1.6;
+  // line-height: 30px;
   text-align: center;
-  height: 17rem;
+  height: 100px;
+  // display: inline-block
+  vertical-align: middle;
+  // height: 3.7rem !important;
+  // height: 90px !important;
+  line-height: 90px;
 }
 .minus,
 .plus {
@@ -163,12 +173,14 @@ h1 {
   color: $silver;
   width: 30%;
   font-weight: 900;
+  font-size: 2.62em;
 }
 .count {
   background-color: $navy;
   color: $silver;
   width: 40%;
   font-weight: 200;
+  font-size: 1.62em;
 }
 
 
@@ -194,12 +206,14 @@ h1 {
   width: 98.5vw;
   top: 0;
   padding: 3em 1em;
+  // @include debug($teal);
 }
 
 .settings-etc.visible {
   transform: translateX(-98.5vw);
   // http://css3gen.com/box-shadow/
   box-shadow: 0px 0px 10px 0px rgba(50, 50, 50, 0.66);
+  // @include debug($teal);
 }
 
 .view.timer {
@@ -216,7 +230,6 @@ h1 {
 }
 
 .ui.row * {
-  max-height: 3em;
 }
 
 $bottom-nav-radius: 10vw;
@@ -244,28 +257,30 @@ $bottom-nav-radius: 10vw;
   }
 }
 
-
-
-
+.start.button,
 .stop.button {
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 4em;
+  color: white;
+  line-height: 3;
+}
+
+.stop.button {
   background-color: $teal;
 }
 
 .start.button {
   background-color: $aqua;
-  color: white;
-  line-height: 1.62;
-  // font-size: 1.62em;
-  padding: 0;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 4em;
-  color: white;
+}
+
+
+.settings-trigger {
+  padding: 0 0.2em;
+  font-size: 1.62em;
+  line-height: 40px;
+  height: 52px;
+  text-align: center;
+  width: 1.62em;
 }

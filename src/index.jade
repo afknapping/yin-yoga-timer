@@ -3,7 +3,7 @@ extends ./_layouts-includes/_layout.jade
 block content
 
   .app-top-bar
-    |  yin yoga timer 
+    | timer
     //- button.button.test(onclick="alert('yo');" style="touch-action: none;")
     //-   | resp
 
@@ -17,26 +17,24 @@ block content
         | Poses
       .ui.row
         .minus.integer.spinner.starts.attached.group
-          .button
-            | -
+          | -
         .count
           | 23
         .plus.integer.spinner.ends.attached.group
-          .button
-            | +
+          | +
     .section.slack
       h1
         | Slack
       .ui.row
         .poses
           .minus.integer.spinner.starts.attached.group
-            .button
-              | -
+          
+            | -
           .count
             | 5
           .plus.integer.spinner.ends.attached.group
-            .button
-              | +
+        
+            | +
 
     .section.time
       h1
@@ -44,13 +42,11 @@ block content
       .ui.row
         .poses
           .minus.integer.spinner.starts.attached.group
-            .button
-              | -
+            | -
           .count
             | 30
           .plus.integer.spinner.ends.attached.group
-            .button
-              | +
+            | +
 
     .section.start
       .start.button.full-width#start(style="touch-action: none;")
