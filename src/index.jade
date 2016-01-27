@@ -49,7 +49,7 @@ block content
             | +
 
     .section.start
-      .start.button.full-width#start(style="touch-action: none;")
+      .start.button.full-width#start(style="touch-action: none;" onclick=("start()"))
         | Start
 
   .view.settings-etc
@@ -58,7 +58,8 @@ block content
 
   .view.timer
     | timer view
-    .button.stop(style="touch-action: none;")
+    .timer-status
+    .button.stop(style="touch-action: none;" onclick=("stop()"))
       | stop
 
 
