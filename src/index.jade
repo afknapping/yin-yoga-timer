@@ -16,20 +16,20 @@ block content
       h1
         | Poses
       .ui.row
-        .minus.integer.spinner.starts.attached.group(onClick="crement ('poses', -1);")
+        .minus.integer.spinner.starts.attached.group(style="touch-action: none;" onClick="crement ('poses', -1);")
           | -
         #posesCountDisplay.count
-        .plus.integer.spinner.ends.attached.group(onClick="crement ('poses', 1);")
+        .plus.integer.spinner.ends.attached.group(style="touch-action: none;" onClick="crement ('poses', 1);")
           | +
     .section.slack
       h1
         | Slack
       .ui.row
         .slack
-          .minus.integer.spinner.starts.attached.group(onClick="crement ('slack', -1);")
+          .minus.integer.spinner.starts.attached.group(style="touch-action: none;" onClick="crement ('slack', -1);")
             | -
           #SlackCountDisplay.count
-          .plus.integer.spinner.ends.attached.group(onClick="crement ('slack', 1);")
+          .plus.integer.spinner.ends.attached.group(style="touch-action: none;" onClick="crement ('slack', 1);")
         
             | +
 
@@ -38,10 +38,10 @@ block content
         | Time
       .ui.row
         .poses
-          .minus.integer.spinner.starts.attached.group(onClick="crement ('timeBudgetInMin', -1);")
+          .minus.integer.spinner.starts.attached.group(style="touch-action: none;" onClick="crement ('timeBudgetInMin', -1);")
             | -
           #TimeBudgetDisplay.count
-          .plus.integer.spinner.ends.attached.group(onClick="crement ('timeBudgetInMin', 1);")
+          .plus.integer.spinner.ends.attached.group(style="touch-action: none;" onClick="crement ('timeBudgetInMin', 1);")
             | +
 
     .section.start
