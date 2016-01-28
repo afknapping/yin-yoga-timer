@@ -2,11 +2,11 @@ extends ./_layouts-includes/_layout.jade
 
 block content
 
+
   .app-top-bar
     | timer
     //- button.button.test(onclick="alert('yo');" style="touch-action: none;")
     //-   | resp
-
   
   .bottom-nav.button.settings-trigger(style="touch-action: none;" onclick="showWiew( 'more' );")
       | =
@@ -49,7 +49,7 @@ block content
 
   .view.settings-etc
     button.button(onClick="location.reload(true)")
-      | Reloadd
+      | Check for updates
 
   .view.timer
     | timer view

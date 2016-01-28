@@ -1,7 +1,37 @@
 TODOS and Ideas™
 
-- view state via model
-- state to localstorage
+## refactor and split
+
+- split conf and state
+
+- sync view names and visibility on setting classes
+
+- update state 
+    => update deduced values
+    => renderDom
+    => persist state
+
+
+- "populate"
+    => read localstorage
+    OR
+    => pull defaults
+        => update state
+
+- pause timer
+    => get and store timer state
+
+
+
+---
+
+- lockblocker w/ video
+
+- checking for updates indicator
+- show time per unit
+- visualize timer progress
+
+
 - post-css generated styleguide
 - tests
 - do it in angular
@@ -33,3 +63,10 @@ selector:-ms-fullscreen {
 selector {
   display: none; // hides the element when not in fullscreen mode
 }
+
+
+
+# DONE
+
+- view state via model @done
+- state to localstorage @done

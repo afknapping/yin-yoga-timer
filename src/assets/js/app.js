@@ -1,3 +1,61 @@
+
+var UINodes = {
+  'UINodePoses': $('#posesCountDisplay'),
+  'UINodeSlack': $('#SlackCountDisplay'),
+  'UINodeTimeBudget': $('#TimeBudgetDisplay'),
+};
+
+
+var confBackup = {
+  'poses': 10,
+  'slack': 3,
+  'timeBudgetInMin': 1,
+
+  'UIStateCurrentView': 'settings'
+
+};
+
+var conf = {};
+conf = read ( 'conf' );
+console.log( conf );
+if ( conf == null ) {
+  conf = confBackup;
+  persist ( 'conf', conf)
+  console.log( conf );
+}
+
+
+// http://stackoverflow.com/questions/2010892/storing-objects-in-html5-localstorage#2010948
+
+function persist ( key, data ) {
+  localStorage.setItem( key, JSON.stringify( data ));
+};
+function read ( key ) {
+  return JSON.parse( localStorage.getItem( key ) );
+};
+// persist ( 'conf', conf )
+// read ( 'conf' )
+
+
+
+// http://html5tutorial.net/tutorials/working-with-html5-localstorage.html
+
+
+
+function pullState () {
+  conf = read ( 'conf' );
+}
+
+function pushState () {
+  conf = read ( 'conf' );
+}
+
+
+
+
+
+
+
 // controlling event bubbling hehe
 $('.a-front-container-or-element').click(function(event){ event.stopPropagation(); });
 
@@ -12,34 +70,20 @@ applicationCache.addEventListener('updateready', function() {
     window.location.reload(); } });}
 
 
-var conf = {};
-
-conf.poses = 10;
-conf.slack = 3;
-conf.posesPlusSlack = conf.poses + conf.slack;
-conf.timeBudgetInMin = 1;
-conf.timeBudgetInSec = conf["timeBudgetInMin"] * 60;
-
-conf.UINodePoses = $('#posesCountDisplay');
-conf.UINodeSlack = $('#SlackCountDisplay');
-conf.UINodeTimeBudget = $('#TimeBudgetDisplay');
-
-// conf.UIStateTimerRunning =
-// conf.UIStateElapsed =
 
 
 
 // conf.UIStateViews = ['settings', 'timer', 'more'];
 // RENAME to home, timer, more? more has currently class .settings-etc
-conf.UIStateCurrentView = 'settings';
+
 
 
 // update DOM with configuration data
 function updateDom() {
   // data in settings screen
-  conf.UINodePoses.text( conf.poses );
-  conf.UINodeSlack.text( conf.slack );
-  conf.UINodeTimeBudget.text( conf.timeBudgetInMin );
+  UINodes.UINodePoses.text( conf.poses );
+  UINodes.UINodeSlack.text( conf.slack );
+  UINodes.UINodeTimeBudget.text( conf.timeBudgetInMin );
 
   if ( conf.UIStateCurrentView == 'more') {
     $('.settings-etc').toggleClass('visible');
@@ -82,6 +126,7 @@ function crement (model, delta) {
   console.log( conf[model] );
   console.log( conf.timeBudgetInMin );
   console.log( conf.timeBudgetInSec );
+  persist ( 'conf', conf)
   updateDom();
 }
 
@@ -141,3 +186,5 @@ function timer (timeBudgetInSec, posesPlusSlack)   {
 
 
 updateDom();
+
+
