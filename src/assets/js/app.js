@@ -56,7 +56,10 @@ function crement (model, delta) {
   console.log( conf[model] );
   conf[model] = conf[model] + delta;
   conf.timeBudgetInSec = conf["timeBudgetInMin"] * 60;
+  conf.posesPlusSlack = conf["poses"] + conf["slack"];
   console.log( conf[model] );
+  console.log( conf.timeBudgetInMin );
+  console.log( conf.timeBudgetInSec );
   updateDom();
 }
 
