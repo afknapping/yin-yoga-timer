@@ -12,14 +12,54 @@ applicationCache.addEventListener('updateready', function() {
     window.location.reload(); } });}
 
 
+var conf = {};
 
-var timeBudget = 3 * 60;
-var posesPlusSlack = 28;
+conf.poses = 10;
+conf.slack = 3;
+conf.posesPlusSlack = conf.poses + conf.slack;
+conf.timeBudgetInMin = 1;
+conf.timeBudgetInSec = conf["timeBudgetInMin"] * 60;
 
-// init: pull values from dom
-// on change: push to dom
+conf.UINodePoses = $('#posesCountDisplay');
+conf.UINodeSlack = $('#SlackCountDisplay');
+conf.UINodeTimeBudget = $('#TimeBudgetDisplay');
 
-// start: run timer
+// update DOM with configuration data
+function updateDom() {
+  conf.UINodePoses.text( conf.poses );
+  conf.UINodeSlack.text( conf.slack );
+  conf.UINodeTimeBudget.text( conf.timeBudgetInMin );
+}
+
+// useless here but good to know: convert string to integer :D
+// but I never want to read the DOM, just update it from the model
+// conf.UINodePoses = parseInt($('#posesCountDisplay').text(), 10);
+
+
+
+
+
+
+// TODO: DOESN'T WORK
+// crement (model, delta, cb)
+
+// crement ("poses", 1);
+// crement ("poses", -1);
+// crement ("slack", 1);
+// crement ("slack", -1);
+// crement ("timeBudgetInMin", 1);
+// crement ("timeBudgetInMin", -1);
+
+
+function crement (model, delta) {
+  console.log( model );
+  console.log( conf[model] );
+  conf[model] = conf[model] + delta;
+  conf.timeBudgetInSec = conf["timeBudgetInMin"] * 60;
+  console.log( conf[model] );
+  updateDom();
+}
+
 
 
 // http://stackoverflow.com/questions/11330917/how-to-play-a-mp3-using-javascript/11331165#11331165
@@ -36,11 +76,12 @@ function playSound (selection) {
 };
 
 function start () {
-  intervallId = timer (timeBudget, posesPlusSlack);
+  intervallId = timer (conf.timeBudgetInSec, conf.posesPlusSlack);
   console.log(intervallId);
 };
 
 function stop () {
+  // http://stackoverflow.com/questions/2901108/how-do-i-clear-this-setinterval/2901155#2901155
   window.clearInterval(intervallId);
   console.log("stopped " + intervallId);
 };
@@ -49,8 +90,9 @@ function stop () {
 
 
 // http://www.sitepoint.com/creating-accurate-timers-in-javascript/
-function timer (timeBudget, posesPlusSlack)   {
-  var increment = timeBudget / posesPlusSlack;
+function timer (timeBudgetInSec, posesPlusSlack)   {
+  var increment = timeBudgetInSec / posesPlusSlack;
+  console.log("increment: " + increment);
   var cycle = 0;
 
   var start = new Date().getTime();
@@ -67,9 +109,10 @@ function timer (timeBudget, posesPlusSlack)   {
       cycle = cycle + 1;
       playSound(sound2);
       $('.timer-status').text(" elapsed: "+ elapsed +" cycle: "+ cycle);
-      // document.write(" elapsed: "+ elapsed +" cycle: "+ cycle + "<br/>");
     };
-    // $('.stop').bind( window.clearInterval(intervallId) );
   }, 100);
 };
 
+
+
+updateDom();
