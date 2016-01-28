@@ -24,31 +24,53 @@ conf.UINodePoses = $('#posesCountDisplay');
 conf.UINodeSlack = $('#SlackCountDisplay');
 conf.UINodeTimeBudget = $('#TimeBudgetDisplay');
 
+// conf.UIStateTimerRunning =
+// conf.UIStateElapsed =
+
+
+
+// conf.UIStateViews = ['settings', 'timer', 'more'];
+// RENAME to home, timer, more? more has currently class .settings-etc
+conf.UIStateCurrentView = 'settings';
+
+
 // update DOM with configuration data
 function updateDom() {
+  // data in settings screen
   conf.UINodePoses.text( conf.poses );
   conf.UINodeSlack.text( conf.slack );
   conf.UINodeTimeBudget.text( conf.timeBudgetInMin );
+
+  if ( conf.UIStateCurrentView == 'more') {
+    $('.settings-etc').toggleClass('visible');
+  }
+
+  if ( conf.UIStateCurrentView == 'timer') {
+    $('.viewport').addClass('is-running');
+  }
+
+  if ( conf.UIStateCurrentView == 'settings') {
+    $('.viewport').removeClass('is-running');
+  }
+
+  if ( conf.UIStateCurrentView == 'settings') {
+    $('.settings-etc').removeClass('visible');
+  }
+
+
+  // timer
 }
+
+
+function showWiew( view ) {
+  conf["UIStateCurrentView"] = view;
+  updateDom();
+}
+
 
 // useless here but good to know: convert string to integer :D
 // but I never want to read the DOM, just update it from the model
 // conf.UINodePoses = parseInt($('#posesCountDisplay').text(), 10);
-
-
-
-
-
-
-// TODO: DOESN'T WORK
-// crement (model, delta, cb)
-
-// crement ("poses", 1);
-// crement ("poses", -1);
-// crement ("slack", 1);
-// crement ("slack", -1);
-// crement ("timeBudgetInMin", 1);
-// crement ("timeBudgetInMin", -1);
 
 
 function crement (model, delta) {

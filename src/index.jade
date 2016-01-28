@@ -8,7 +8,7 @@ block content
     //-   | resp
 
   
-  .bottom-nav.button.settings-trigger(style="touch-action: none;")
+  .bottom-nav.button.settings-trigger(style="touch-action: none;" onclick="showWiew( 'more' );")
       | =
 
   .view.timer-settings
@@ -43,9 +43,8 @@ block content
           #TimeBudgetDisplay.count
           .plus.integer.spinner.ends.attached.group(style="touch-action: none;" onClick="crement ('timeBudgetInMin', 1);")
             | +
-
     .section.start
-      .start.button.full-width#start(style="touch-action: none;" onclick=("start()"))
+      .start.button.full-width#start(style="touch-action: none;" onclick=("start(); showWiew( 'timer' );"))
         | Start
 
   .view.settings-etc
@@ -55,7 +54,7 @@ block content
   .view.timer
     | timer view
     .timer-status
-    .button.stop(style="touch-action: none;" onclick=("stop()"))
+    .button.stop(style="touch-action: none;" onclick=("stop();showWiew( 'settings' );"))
       | stop
 
 
