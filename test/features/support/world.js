@@ -1,15 +1,20 @@
+wd = require('wd');
+
+var browser;
+
 function World() {
-  var webdriver = require('selenium-webdriver'),
-    By = require('selenium-webdriver').By,
-    until = require('selenium-webdriver').until;
-
-  var driver = new webdriver.Builder()
-      .forBrowser('firefox')
-      .build();
-
-  this.browser = driver;
+  browser = wd.promiseChainRemote();
+  this.browser = browser.init({browserName:'firefox'});
 }
-
 module.exports = function() {
   this.World = World;
+
+  this.After(function () {
+    return browser.execute('window.localStorage.clear();');
+  });
+
+  this.registerHandler('AfterFeatures', function (e, done) {
+    browser.quit()
+      .then(done);
+  });
 };

@@ -21,13 +21,10 @@ module.exports = function () {
   });
 
   this.Then(/^I should see the time budget displayed$/, function (callback) {
-    this.browser.get('http://www.google.com/ncr');
-    this.browser.findElement(By.name('q')).sendKeys('webthis.browser');
-    this.browser.findElement(By.name('btnG')).click();
-    this.browser.wait(until.titleIs('webthis.browser - Google Search'), 10000);
-    this.browser.quit();
-
-    callback();
+    this.browser.get('http://localhost:3000/')
+    .waitForElementById('TimeBudgetDisplay')
+    .then(function() {
+        callback();
+    })
   });
-
 };
