@@ -3,8 +3,13 @@ wd = require('wd');
 var browser;
 
 function World() {
-  browser = wd.promiseChainRemote();
-  this.browser = browser.init({browserName:'firefox'});
+
+  if (!browser) {
+    browser = wd.promiseChainRemote();
+    browser = browser.init({browserName:'firefox'});
+  }
+
+  this.browser = browser;
 }
 module.exports = function() {
   this.World = World;

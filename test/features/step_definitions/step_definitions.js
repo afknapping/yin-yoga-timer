@@ -27,4 +27,35 @@ module.exports = function () {
         callback();
     })
   });
+
+  var initialValue; // make global
+
+  this.When(/^I click on the time budget increase button 3 times$/, function () {
+
+
+    return this.browser.get('http://localhost:3000/')
+      .elementById('TimeBudgetDisplay')
+      .text()
+      .then(function(value) {
+        initalValue = value
+      })
+      .elementByCss('.section.time .plus')
+      .click().click().click()
+
+  });
+
+  this.Then(/^the time budget shoud be (\d+) times higher than before$/, function (arg1, callback) {
+
+    this.browser
+      .elementById('TimeBudgetDisplay')
+      .text()
+      .then(function(value) {
+        if (value - initalValue == 3) {
+          callback();
+        } else {
+          callback(new Error('Das stimmt gar nicht #sadface'));
+        }
+      });
+  });
 };
+
