@@ -14,5 +14,10 @@
   "dependencies": {
     "curly-weasel-moo": "^0.11.3",
     "mobile-boilerplate-timetable-3": "git+https://github.com/filtercake/mobile-boilerplate-timetable-3.git#gh-pages"
+  },
+  "devDependencies": {
+    "cucumber": "^0.9.4",
+    "selenium-webdriver": "^2.48.2",
+    "webdriverio": "^3.4.0"
   }
 }

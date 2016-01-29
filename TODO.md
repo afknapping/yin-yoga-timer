@@ -1,5 +1,8 @@
 TODOS and Ideas™
 
+- mkdir -p test/features
+
+
 ## refactor and split
 
 - split conf and state
