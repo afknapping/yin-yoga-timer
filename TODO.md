@@ -1,11 +1,13 @@
 TODOS and Ideas™
 
-- mkdir -p test/features
-
+- id and/or namespace all UI nodes
+- buttons as ui nodes
+- show time per unit
+- replace markup onclick with (genrated) bindings
 
 ## refactor and split
 
-- split conf and state
+- split conf, state, deduced_values
 
 - sync view names and visibility on setting classes
 
@@ -17,6 +19,7 @@ TODOS and Ideas™
 
 - "populate"
     => read localstorage
+        => update state
     OR
     => pull defaults
         => update state
@@ -30,13 +33,16 @@ TODOS and Ideas™
 
 - lockblocker w/ video
 
+
+- scripts: mkdir -p test/features
+
 - checking for updates indicator
-- show time per unit
+
 - visualize timer progress
 
 
 - post-css generated styleguide
-- tests
+
 - do it in angular
 - do it in react
 
@@ -73,3 +79,4 @@ selector {
 
 - view state via model @done
 - state to localstorage @done
+- spike cucumber tests @done
