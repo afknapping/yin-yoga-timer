@@ -12,10 +12,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "curly-weasel-moo": "^0.11.3",
-    "mobile-boilerplate-timetable-3": "git+https://github.com/filtercake/mobile-boilerplate-timetable-3.git#gh-pages"
   },
   "devDependencies": {
+    "curly-weasel-moo": "^0.12.0",
+    "mobile-boilerplate-timetable-3": "git+https://github.com/filtercake/mobile-boilerplate-timetable-3.git#gh-pages",
     "cucumber": "^0.9.4",
     "selenium-webdriver": "^2.48.2",
     "wd": "^0.4.0",

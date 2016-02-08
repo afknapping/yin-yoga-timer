@@ -74,7 +74,7 @@ box-shadow: inset 0px 0px 2px 2px $color;
   // @include debug;
   width: 100vw;
   height: 100vh;
-  background-color: $silver;
+  // background-color: $dirty-blue;
   overflow: hidden;
   position: relative;
 }
@@ -84,7 +84,7 @@ box-shadow: inset 0px 0px 2px 2px $color;
   padding: 2.3em 0 0 0;
   width: 100vw;
   height: 100vh;
-  background-color: $silver;
+  background-color: lighten($dirty-blue, 70);
   padding: 2.3em 0 0 0;
   // font-size: 4rem;
   overflow: hidden;
@@ -171,15 +171,15 @@ h1 {
 }
 .minus,
 .plus {
-  background-color: $maroon;
-  color: $silver;
+  background-color: darken($autumn-blood, 20);
+  color: lighten($dirty-blue, 70);
   width: 30%;
   font-weight: 900;
   font-size: 2.62em;
 }
 .count {
-  background-color: $navy;
-  color: $silver;
+  background-color: $dirty-blue;
+  color: lighten($autumn-blood, 60);
   width: 40%;
   font-weight: 200;
   font-size: 1.62em;
@@ -187,7 +187,7 @@ h1 {
 
 
 .app-top-bar {
-  background-color: $navy;
+  background-color: $dirty-blue;
   color: $silver;
   padding: 0.5em;
   width: 100%;
@@ -239,8 +239,8 @@ $bottom-nav-radius: 10vw;
   position: fixed;
   top: 0;
   right: 0;
-  background-color: $yellow;
-  opacity: 0.6;
+  background-color: $neapel-yellow;
+  opacity: 0.9;
   z-index: 30;
   width: $bottom-nav-radius;
   height: $bottom-nav-radius;
@@ -270,11 +270,11 @@ $bottom-nav-radius: 10vw;
 }
 
 .stop.button {
-  background-color: $teal;
+  background-color: lighten($heaven-shall-burn, 10);
 }
 
 .start.button {
-  background-color: $aqua;
+  background-color: lighten($petrol-green, 10);
 }
 
 
@@ -286,3 +286,5 @@ $bottom-nav-radius: 10vw;
   text-align: center;
   width: 1.62em;
 }
+
+
